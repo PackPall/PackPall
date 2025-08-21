@@ -1,12 +1,52 @@
 
-:root { --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+:root {
+  --bg: #0b1020;
+  --card: #11162a;
+  --text: #e9edf7;
+  --muted: #a9b2c7;
+  --accent: #4f7cff;
+  --accent2: #22d3ee;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial;
+}
 * { box-sizing: border-box; }
-body { margin: 0; padding: 0; font-family: var(--font); line-height: 1.6; color: #111; }
-header, footer { padding: 16px; }
-header { border-bottom: 1px solid #eee; }
-footer { border-top: 1px solid #eee; font-size: 14px; color: #555; }
-.container { max-width: 820px; margin: 0 auto; padding: 24px 16px; }
-a { color: #0b5fff; text-decoration: none; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(79,124,255,.25), transparent 40%),
+              radial-gradient(1000px 600px at 100% 0, rgba(34,211,238,.22), transparent 50%),
+              var(--bg);
+}
+a { color: var(--accent2); text-decoration: none; }
 a:hover { text-decoration: underline; }
-h1, h2, h3 { line-height: 1.2; margin: 16px 0 8px; }
-nav a { margin-right: 12px; }
+.nav { display:flex; gap:16px; align-items:center; }
+.container { max-width: 900px; margin: 0 auto; padding: 24px; }
+.header { display:flex; align-items:center; justify-content:space-between; padding: 18px 24px; }
+.brand { display:flex; align-items:center; gap:14px; }
+.brand img { width:48px; height:48px; border-radius: 12px; }
+.brand h1 { font-size: 22px; margin:0; letter-spacing:.2px; }
+.hero { display:flex; flex-direction:column; align-items:center; text-align:center; padding: 40px 24px 8px; }
+.hero img { width:120px; height:120px; border-radius: 28px; box-shadow: var(--shadow); }
+.hero h2 { font-size: 34px; margin: 16px 0 8px; }
+.hero p { color: var(--muted); margin:0 0 24px; max-width: 680px; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px; padding: 16px 24px 40px; }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 18px 18px;
+  box-shadow: var(--shadow);
+}
+.card h3 { margin: 8px 0; font-size: 18px; }
+.card p { color: var(--muted); margin: 6px 0 14px; }
+.button {
+  display:inline-block; padding:10px 14px; border-radius:12px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color:white; font-weight:600; letter-spacing:.2px;
+}
+.footer { padding: 24px; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); }
+.content { background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.content h1 { margin-top: 0; }
